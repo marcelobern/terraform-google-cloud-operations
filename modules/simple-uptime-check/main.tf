@@ -122,6 +122,7 @@ resource "google_monitoring_alert_policy" "alert_policy" {
   display_name = local.alert_policy_name
   enabled      = var.enabled
   combiner     = var.alert_policy_combiner
+  severity     = var.alert_policy_severity
 
   conditions {
     display_name = var.condition_display_name != "" ? var.condition_display_name : "Failure of uptime check_id ${google_monitoring_uptime_check_config.uptime_check.uptime_check_id}"
